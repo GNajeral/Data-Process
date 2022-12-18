@@ -10,12 +10,14 @@ from statsmodels.graphics.mosaicplot import mosaic
 df = pd.DataFrame(pd.read_excel("output_def.xlsx"))
 
 print(df)
+print(len(df.columns))
 
 print(df['n_tumor'].shape[0])
 
+corr_matrix = df.corr()
+print(corr_matrix)
 
-
-
+"""
 # Labelizer contiene el numero de datos que contiene ambas etiquetas (Se ve en crosstable)
 def categorical_relation(var1,var2,labelizer):
   crosstable=pd.crosstab(df[var1],df[var2])
@@ -36,3 +38,4 @@ categorical_relation('neoadjuvant','grade',
 ##df_preprocessed_def = df_preprocessed_def.reset_index(drop=True)
 ##kia = df_preprocessed_def['ki67'].reset_index(drop=True)
 ##print(type(kia))
+"""
